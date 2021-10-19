@@ -11,6 +11,7 @@
   --medium-fw: 500;
   --large-fw: 700;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -19,149 +20,168 @@
 }
 
 body {
-  padding: 1rem;
-  display: grid;
-  place-content: center;
-  background: url("images/bg-pattern-top-desktop.svg");
+  position: relative;
+  padding: 1.5rem;
+}
+body .desktop {
+  display: none;
+}
+body .mobile {
+  position: absolute;
+  z-index: 100;
+}
+body .bg-top-mb {
+  top: 0;
+  left: 0;
+}
+body .bg-bottom-mb {
+  bottom: 0;
+  right: 0;
 }
 body .hero-section {
-  margin-top: 5rem;
-}
-body .hero-section .artical {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 550px;
 }
 body .hero-section .artical .content {
+  text-align: center;
   color: var(--dark-pink);
-  max-width: 25rem;
 }
 body .hero-section .artical .content .title {
   font-weight: var(--large-fw);
-  font-size: 2.5rem;
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
 }
 body .hero-section .artical .content .text {
-  margin-top: 1rem;
+  line-height: 1.5rem;
 }
 body .hero-section .artical .ratings {
-  display: flex;
-  flex-direction: column;
-  width: 27rem;
+  margin: 2.5rem auto;
 }
 body .hero-section .artical .ratings .rating {
   background-color: var(--soft-grayish);
-  color: var(--dark-pink);
-  padding: 0.8rem;
+  margin: 1rem auto;
   border-radius: 0.5rem;
-  margin: 0.5rem;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 22rem;
+  padding: 1rem;
 }
 body .hero-section .artical .ratings .rating .star-text {
   font-weight: var(--large-fw);
-  font-size: 0.8rem;
-}
-body .hero-section .artical .ratings .center {
-  align-self: center;
-}
-body .hero-section .artical .ratings .end {
-  align-self: flex-end;
-}
-body .hero-section .reviews {
-  margin-top: 2rem;
-  display: flex;
-  height: 17rem;
+  font-size: 1rem;
+  color: var(--dark-pink);
 }
 body .hero-section .reviews .review {
-  padding: 1.5rem;
   background-color: var(--dark-pink);
+  margin: 1rem auto;
   border-radius: 0.5rem;
-  margin: 0.5rem;
-  align-items: center;
-  max-width: 22rem;
+  padding: 1.5rem;
+  max-width: 22.5rem;
 }
 body .hero-section .reviews .review .people-info {
   display: flex;
-  margin-bottom: 1.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
 }
 body .hero-section .reviews .review .people-info .profile-img {
-  width: 3.5rem;
-  height: auto;
   border-radius: 50%;
+  width: 4em;
   margin-right: 1rem;
 }
 body .hero-section .reviews .review .people-info .sth {
-  align-self: center;
+  display: flex;
+  flex-direction: column;
 }
 body .hero-section .reviews .review .people-info .sth .name {
   color: var(--white);
   font-weight: var(--medium-fw);
-  display: block;
 }
 body .hero-section .reviews .review .people-info .sth .verified {
-  display: block;
-  font-size: 0.8rem;
   color: var(--soft-pink);
+  font-size: 0.8rem;
 }
 body .hero-section .reviews .review .review-text {
-  font-size: 0.85rem;
   color: var(--white);
-}
-body .hero-section .reviews .first {
-  align-self: start;
-}
-body .hero-section .reviews .second {
-  align-self: center;
-}
-body .hero-section .reviews .third {
-  align-self: end;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
 }
 
-@media screen and (max-width: 800px) {
-  body {
-    width: 100vw;
+@media screen and (min-width: 800px) {
+  body .desktop {
+    display: block;
+    position: absolute;
+    z-index: -10;
+  }
+  body .bg-top-pc {
+    top: 0;
+    left: 0;
+  }
+  body .bg-bottom-pc {
+    bottom: 0;
+    right: 0;
+  }
+  body .mobile {
+    display: none;
   }
   body .hero-section {
-    margin-top: 0;
-    padding: 1rem;
+    max-width: 1140px;
+    padding: 2.5rem;
+  }
+  body .hero-section .artical {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
   body .hero-section .artical .content {
-    margin: 0 auto;
-    text-align: center;
-    width: 20rem;
+    max-width: 23rem;
+    margin-right: 1rem;
   }
   body .hero-section .artical .content .title {
-    font-size: 2rem;
+    font-size: 2.3rem;
+    text-align: left;
+  }
+  body .hero-section .artical .content .text {
+    text-align: left;
   }
   body .hero-section .artical .ratings {
-    align-items: center;
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
   body .hero-section .artical .ratings .rating {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 25rem;
+    margin: 1rem 0;
   }
-  body .hero-section .artical .ratings .end {
+  body .hero-section .artical .ratings .start {
+    align-self: start;
+  }
+  body .hero-section .artical .ratings .center {
     align-self: center;
   }
+  body .hero-section .artical .ratings .end {
+    align-self: end;
+  }
   body .hero-section .reviews {
-    margin: 0 auto;
-    margin-top: 13rem;
-    margin-bottom: 13rem;
+    margin-top: 3rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 20rem;
   }
   body .hero-section .reviews .review {
-    width: 22rem;
+    margin: 0.7rem;
+    width: 28rem;
+    min-height: 16rem;
   }
   body .hero-section .reviews .first {
+    align-self: start;
+  }
+  body .hero-section .reviews .second {
     align-self: center;
   }
   body .hero-section .reviews .third {
-    align-self: center;
+    align-self: end;
   }
 }/*# sourceMappingURL=main.css.map */
